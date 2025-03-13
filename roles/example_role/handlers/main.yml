@@ -1,0 +1,5 @@
+- name: Restart service
+  service:
+    name: example_service
+    state: restarted
+  when: example_service_changed

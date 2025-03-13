@@ -1,0 +1,25 @@
+- name: Example Role Tasks
+  hosts: all
+  tasks:
+    - name: Ensure example package is installed
+      apt:
+        name: example-package
+        state: present
+
+    - name: Start example service
+      service:
+        name: example-service
+        state: started
+
+    - name: Copy example configuration file
+      template:
+        src: example_config.j2
+        dest: /etc/example_config.conf
+
+    - name: Ensure example directory exists
+      file:
+        path: /var/example_directory
+        state: directory
+
+    - name: Run example command
+      command: /usr/bin/example_command --option value
